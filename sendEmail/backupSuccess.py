@@ -1,4 +1,4 @@
-from sendEmail import send
+import Index
 import datetime
 
 context = f'''
@@ -6,4 +6,4 @@ context = f'''
     <div>時間 : {datetime.datetime.now()} </div>
 '''
 
-send("za96346@gmail.com", context)
+Index.send("za96346@gmail.com", context)
