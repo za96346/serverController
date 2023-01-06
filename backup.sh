@@ -6,4 +6,4 @@ pwd=siou0722
 
 docker exec -i $CONTAINER bash -c "mysqldump -u root -p$pwd  $DB_NAME" > $FILENAME
 
-python ./sendEmail/backupSuccess.py
+python ~/serverController/sendEmail/backupSuccess.py
