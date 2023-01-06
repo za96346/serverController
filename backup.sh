@@ -7,4 +7,4 @@ which python
 
 docker exec -i $CONTAINER bash -c "mysqldump -u root -p$pwd  $DB_NAME" > $FILENAME
 
-python ~/sendEmail/backupSuccess.py
+python ./sendEmail/backupSuccess.py
