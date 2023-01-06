@@ -2,7 +2,6 @@ import os
 import smtplib
 from dotenv import load_dotenv
 import email
-import datetime
 
 load_dotenv()
 key = os.getenv('EMAIL_AUTH_TOKEN')
@@ -17,8 +16,6 @@ def send(toEmail, context):
     #寄送比較多的內容
     msg.add_alternative(
         f'''
-            <div>workApplication DB  備份成功</div>
-            <div>時間 : {datetime.datetime.now()} </div>
             {context}
         ''',
         subtype="html"
