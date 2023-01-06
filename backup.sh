@@ -4,12 +4,6 @@ DB_NAME=workApplication
 FILENAME=~/backup/workApplication/"$(date "+%Y%m%d_%H%M%S")".sql
 pwd=siou0722
 
-docker exec -i $CONTAINER bash -c "mysqldump -u root -p$pwd  $DB_NAME" > $FILENAME &
-PID=$!
-wait $PID
-if [-f "$FILENAME"]
-then
-    python ./sendEmail/backupSuccess.py
-else
-    python ./sendEmail/backupFail.py
-fi
+docker exec -i $CONTAINER bash -c "mysqldump -u root -p$pwd  $DB_NAME" > $FILENAME
+
+python ./sendEmail/backupSuccess.py
